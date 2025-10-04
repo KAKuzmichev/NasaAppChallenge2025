@@ -1,0 +1,32 @@
+{
+  "data_root": "../data",
+  "sequence_length": 1000,
+  "stride_ratio": 0.5,
+  "min_length_ratio": 0.8,
+  
+  "model_type": "simple",
+  "lstm_units": 64,
+  "dropout_rate": 0.3,
+  "dense_units": 32,
+  "learning_rate": 0.001,
+  "use_bidirectional": false,
+  "use_multiple_lstm": false,
+  
+  "epochs": 5,
+  "batch_size": 16,
+  "validation_split": 0.15,
+  "test_split": 0.15,
+  "train_split": 0.7,
+  "random_state": 42,
+  "use_callbacks": true,
+  "early_stopping_patience": 3,
+  
+  "save_model": true,
+  "save_plots": true,
+  "save_results": true,
+  "output_dir": "results",
+  "model_filename": "exoplanet_lstm_model.h5",
+  
+  "classification_threshold": 0.5,
+  "find_optimal_threshold": true
+}

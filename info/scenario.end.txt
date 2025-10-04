@@ -1,0 +1,207 @@
+Screenplay: The Discovery of Life - The "R.O.M.A.N." Telescope Report (English Translation)
+Location: Deep Space, NASA Mission Control Center (MCC) in Houston, and NASA Main Auditorium.
+Time: Night, Present Day.
+
+SCENE 1: DEEP SPACE
+INT. "R.O.M.A.N." SPACE TELESCOPE - NIGHT
+
+Silence. Only the faint flicker of control panel lights. A view through the viewport: infinite blackness, scattered with stars.
+
+The camera focuses on the "R.O.M.A.N." SPACE TELESCOPE – a futuristic structure drifting in deep space.
+
+CLOSE UP on the telescope's main camera.
+It slowly turns, aiming at a tiny distant dot — an EXOPLANET.
+
+The sound of mechanisms working.
+A flash — the telescope takes an image.
+
+AUTOMATED VOICE (O.S.):
+
+Image acquired. File: ExoAlpha−47. Initiating data transmission to NASA MCC.
+
+SCENE 2: NASA DATA PROCESSING CENTER (PREPARATION)
+INT. IMAGE PROCESSING LAB, NASA MCC - NIGHT
+
+The room is dimly lit, illuminated only by numerous monitors.
+
+ALICE (30s-40s, a data operator, composed and focused) sits at her desk, drinking cold coffee. She stares intently at the monitor.
+
+On the main monitor, the data transmission indicator from R.O.M.A.N. is rapidly filling up.
+
+ALICE:
+
+It's so late. This data was due three hours ago. What did you see out there, "R.O.M.A.N."?
+
+SOUND — transmission complete.
+
+A RAW file appears on the screen. It looks unusually bright. Alice begins to work. Her fingers move quickly across the keyboard. She applies correction and spectral analysis algorithms.
+
+The blurry image on the screen sharpens. A bluish atmosphere and dark patches resembling continents become visible.
+The spectral analysis data (graphs) show high concentrations of Oxygen (O
+2
+​
+ ), Methane (CH
+4
+​
+ ), and Water Vapor (H
+2
+​
+ O) — clear biosignatures.
+
+ALICE (Whispering, disbelieving):
+
+Oh my God. That’s a Class Five biosignature. This isn't a mistake.
+
+SCENE 3: CROSS-VERIFICATION
+INT. IMAGE PROCESSING LAB, NASA MCC - CONTINUOUS
+
+Alice calls her superior.
+
+ALICE (Loudly, into the voice chat):
+
+Calling Dr. CARTER. I need an immediate review of R.O.M.A.N. data ExoAlpha−47.
+
+DR. CARTER (50s, skeptical astrophysicist) appears on the video screen, looking annoyed at being woken up.
+
+DR. CARTER:
+
+Alice, you know the protocol. Quality processing, then a report. Don't yell at me in the middle of the night.
+
+ALICE:
+
+I've uploaded the processed data to the server. Look at the Methane and Oxygen levels, Doctor. And the P
+L
+​
+  coefficient. It's higher than we've ever seen.
+
+Dr. Carter quickly opens the file on his computer. His face on the screen changes — from annoyance to shock.
+
+DR. CARTER:
+
+(Whisper) Unbelievable... 98.2%. This... this is a "Locus of Life."
+
+ALICE:
+
+Exactly. I'm uploading the data to the "ATLAS" site for final verification and coordinate retrieval.
+
+SCENE 4: INTERACTION WITH "ATLAS"
+INT. IMAGE PROCESSING LAB, NASA MCC - CONTINUOUS
+
+Alice opens the "ATLAS" WEBSITE INTERFACE — a minimalist, scientific portal where all exoplanet data is compiled.
+
+Alice drags the processed ExoAlpha−47 file into the "Analysis and Coordinates" window.
+The "Processing..." indicator blinks for a few tense seconds.
+
+A red warning appears:
+
+ATTENTION: POTENTIALLY REVOLUTIONARY DATA. FINAL COMPILATION REQUIRED.
+
+Alice clicks "Compile."
+A LIST OF COORDINATES and a three-dimensional model of the planet appear.
+Headline: CANDIDATES WITH HIGH PROBABILITY OF LIFE (P
+L
+​
+ >0.95).
+
+ALICE:
+
+(Exclaiming) We have coordinates! R.A. 11h 23m 47.9s, Dec. -12° 49’ 16.7”! Crater Constellation!
+
+She quickly saves the final report.
+
+DR. CARTER (Appearing back on her screen, now dressed and ready to leave):
+
+Immediately upload the presentation to the Main Auditorium. I'm calling Director Gammon. This can't wait until morning.
+
+SCENE 5: NASA MAIN AUDITORIUM (COMMOTION)
+INT. NASA MAIN AUDITORIUM - NIGHT
+
+The Main Auditorium is buzzing. Although it is late at night, several operators quickly arrive, alerted by the emergency call.
+
+DIRECTOR GAMMON (50s-60s, gray-haired, authoritative) rapidly approaches the main console, with DR. CARTER beside him.
+
+The GIANT PROJECTION SCREEN dominates the front wall. It currently displays a general map of current missions.
+
+DIRECTOR GAMMON:
+
+Carter, are you sure? In the middle of the night?
+
+DR. CARTER:
+
+It's 98.2%, Director. If this doesn't warrant urgency, I don't know what does. These are R.O.M.A.N. data; they are always precise.
+
+A green indicator lights up on Director Gammon's console: "Data ready for projection."
+
+SCENE 6: PROJECTION: THE DISCOVERY
+INT. NASA MAIN AUDITORIUM - CONTINUOUS
+
+DIRECTOR GAMMON:
+
+Load the final ExoAlpha−47 presentation.
+
+The image of current missions on the GIANT SCREEN vanishes.
+The screen switches to GALAXY MAP mode.
+
+ALICE (O.S., voice is formal and clear):
+
+We present the final map of probable habitable worlds, calculated based on biosignatures obtained by the R.O.M.A.N. telescope.
+
+Tiny GREEN DOTS begin to appear on the screen — these are the newly found candidates.
+One dot, EXOPLANET ExoAlpha−47, flashes brighter than the others, accompanied by a large HOLOGRAPHIC PROJECTION of a three-dimensional model. It is a blue, cloudy, unmistakably alive planet.
+
+Key data appears on the projection:
+
+NAME: ExoAlpha-47
+
+CONSTELLATION: Crater
+
+BIOSIGNATURES: O
+2
+​
+ ,CH
+4
+​
+ ,H
+2
+​
+ O
+
+PROBABILITY OF LIFE (P
+L
+​
+ ): 0.982
+
+The room is in absolute silence, followed by a collective GASP OF SHOCK.
+
+DR. CARTER (Voice broken):
+
+We... we are seeing life. This is not just a hypothesis. It's a fact.
+
+SCENE 7: THE WORLD'S REACTION
+INT. DIRECTOR GAMMON'S OFFICE - MORNING
+
+Director Gammon stands by the window, watching the sunrise. Alice and Dr. Carter stand in his office. The tension in the room is palpable.
+
+DIRECTOR GAMMON:
+
+The news broke 15 minutes ago. Markets are dropping. The media is going crazy. Politicians are demanding clarification.
+
+ALICE:
+
+But, sir, the data is impeccable. R.O.M.A.N. is working.
+
+DIRECTOR GAMMON:
+
+(He turns to them, his face tired but determined) I don't doubt the data, Alice. I'm thinking about the consequences. We just changed humanity's place in the universe. And we did it in the middle of the night.
+
+He walks over to a large screen that still projects the rotating blue planet, ExoAlpha−47.
+
+DIRECTOR GAMMON:
+
+We're holding a press conference this morning. I want both of you there. And I want that image to be the first thing the world sees.
+
+The camera focuses on the screen with the Exoplanet.
+
+FADE OUT.
+
+THE END
