@@ -1,0 +1,64 @@
+{
+  "tsfresh": {
+    "method": "tsfresh_lightgbm",
+    "configuration": {
+      "num_stars": 1000,
+      "time_points": 500,
+      "features_extracted": 777,
+      "test_size": 200
+    },
+    "performance": {
+      "accuracy": 0.995,
+      "exoplanets_in_test": 98,
+      "no_exoplanets_in_test": 102,
+      "true_positives": 97,
+      "false_positives": 0,
+      "true_negatives": 102,
+      "false_negatives": 1
+    },
+    "feature_importance": {
+      "top_10_features": [
+        {
+          "feature": "flux_range_count_max_1_min_1",
+          "importance": 18.0
+        },
+        {
+          "feature": "flux_number_crossing_m_m_1_1",
+          "importance": 14.0
+        },
+        {
+          "feature": "flux_benford_correlation",
+          "importance": 13.0
+        },
+        {
+          "feature": "flux_minimum",
+          "importance": 3.0
+        },
+        {
+          "feature": "flux_ratio_beyond_r_sigma_r_2",
+          "importance": 2.0
+        },
+        {
+          "feature": "flux_variance_larger_than_standard_deviation",
+          "importance": 0.0
+        },
+        {
+          "feature": "flux_mean_n_absolute_max_number_of_maxima_7",
+          "importance": 0.0
+        },
+        {
+          "feature": "flux_query_similarity_count_query_None_threshold_0_0",
+          "importance": 0.0
+        },
+        {
+          "feature": "flux_permutation_entropy_dimension_7_tau_1",
+          "importance": 0.0
+        },
+        {
+          "feature": "flux_permutation_entropy_dimension_6_tau_1",
+          "importance": 0.0
+        }
+      ]
+    }
+  }
+}
