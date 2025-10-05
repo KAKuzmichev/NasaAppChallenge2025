@@ -140,17 +140,17 @@ class ExoplanetLSTM:
         
         return output
     
-    def create_callbacks(self, patience: int = 10, min_delta: float = 0.001,
+    def create_callbacks(self, patience: int = 7, min_delta: float = 0.0001,
                         save_best_weights: bool = True, 
-                        reduce_lr_patience: int = 5) -> list:
+                        reduce_lr_patience: int = 3) -> list:
         """
         Create training callbacks for better training control.
         
         Args:
-            patience: Patience for early stopping
-            min_delta: Minimum change to qualify as improvement
+            patience: Patience for early stopping (reduced for better overfitting control)
+            min_delta: Minimum change to qualify as improvement (more sensitive)
             save_best_weights: Whether to save best weights during training
-            reduce_lr_patience: Patience for learning rate reduction
+            reduce_lr_patience: Patience for learning rate reduction (more aggressive)
             
         Returns:
             List of Keras callbacks
@@ -163,7 +163,8 @@ class ExoplanetLSTM:
             patience=patience,
             min_delta=min_delta,
             restore_best_weights=save_best_weights,
-            verbose=1
+            verbose=1,
+            mode='min'
         )
         callback_list.append(early_stopping)
         
@@ -173,14 +174,26 @@ class ExoplanetLSTM:
             factor=0.5,
             patience=reduce_lr_patience,
             min_lr=1e-7,
-            verbose=1
+            verbose=1,
+            mode='min'
         )
         callback_list.append(reduce_lr)
-        
+
+        # Additional early stopping on validation accuracy to catch overfitting
+        early_stopping_acc = callbacks.EarlyStopping(
+            monitor='val_accuracy',
+            patience=patience + 2,  # Slightly more patience for accuracy
+            min_delta=0.0001,
+            restore_best_weights=False,  # Let val_loss early stopping handle restoration
+            verbose=1,
+            mode='max'  # Higher accuracy is better
+        )
+        callback_list.append(early_stopping_acc)
+
         # Model checkpoint (optional)
         if save_best_weights:
             checkpoint = callbacks.ModelCheckpoint(
-                filepath='best_exoplanet_model.h5',
+                filepath='best_exoplanet_model.weights.h5',
                 monitor='val_loss',
                 save_best_only=True,
                 save_weights_only=True,
@@ -211,8 +224,12 @@ class ExoplanetLSTM:
         if self.model is None:
             raise ValueError("Model not built. Call build_model() first.")
         
-        # Prepare callbacks
-        callback_list = self.create_callbacks() if use_callbacks else None
+        # Prepare callbacks with more aggressive early stopping
+        callback_list = self.create_callbacks(
+            patience=7,  # Reduced from default 10
+            min_delta=0.0001,  # More sensitive
+            reduce_lr_patience=3  # More aggressive LR reduction
+        ) if use_callbacks else None
         
         # Calculate class weights for imbalanced data
         pos_weight = len(y_train) / (2 * np.sum(y_train))

@@ -1,0 +1,211 @@
+INFO:utils:Evaluating model on train set...
+INFO:utils:Optimal threshold: 0.300 (F1: 0.937)
+
+============================================================
+EVALUATION SUMMARY - TRAIN SET
+============================================================
+Dataset Info:
+  Total samples: 225640
+  Positive class: 198951 (88.2%)
+  Negative class: 26689
+
+Default Threshold (0.5):
+  Accuracy:    0.7833
+  Precision:   0.8996
+  Recall:      0.8490
+  F1 Score:    0.8736
+  ROC AUC:     0.5886
+  Specificity: 0.2938
+
+Optimal Threshold (0.300):
+  Accuracy:    0.8826
+  Precision:   0.8838
+  Recall:      0.9981
+  F1 Score:    0.9375
+  ROC AUC:     0.5886
+  Specificity: 0.0218
+1602/1602 ━━━━━━━━━━━━━━━━━━━━ 189s 118ms/step
+INFO:utils:Evaluating model on val set...
+INFO:utils:Optimal threshold: 0.300 (F1: 0.949)
+
+============================================================
+EVALUATION SUMMARY - VAL SET
+============================================================
+Dataset Info:
+  Total samples: 51260
+  Positive class: 46161 (90.1%)
+  Negative class: 5099
+
+Default Threshold (0.5):
+  Accuracy:    0.8846
+  Precision:   0.9234
+  Recall:      0.9507
+  F1 Score:    0.9369
+  ROC AUC:     0.5945
+  Specificity: 0.2859
+
+Optimal Threshold (0.300):
+  Accuracy:    0.9031
+  Precision:   0.9033
+  Recall:      0.9994
+  F1 Score:    0.9489
+  ROC AUC:     0.5945
+  Specificity: 0.0320
+1462/1462 ━━━━━━━━━━━━━━━━━━━━ 177s 121ms/step
+INFO:utils:Evaluating model on test set...
+INFO:utils:Optimal threshold: 0.290 (F1: 0.906)
+
+============================================================
+EVALUATION SUMMARY - TEST SET
+============================================================
+Dataset Info:
+  Total samples: 46765
+  Positive class: 38727 (82.8%)
+  Negative class: 8038
+
+Default Threshold (0.5):
+  Accuracy:    0.7508
+  Precision:   0.8468
+  Recall:      0.8535
+  F1 Score:    0.8501
+  ROC AUC:     0.5729
+  Specificity: 0.2562
+
+Optimal Threshold (0.290):
+  Accuracy:    0.8282
+  Precision:   0.8282
+  Recall:      1.0000
+  F1 Score:    0.9060
+  ROC AUC:     0.5729
+  Specificity: 0.0007
+INFO:__main__:Model evaluation completed
+INFO:__main__:Creating visualizations...
+INFO:utils:Training history plot saved to results\run_20251005_005642\training_history.png
+1462/1462 ━━━━━━━━━━━━━━━━━━━━ 152s 104ms/step
+INFO:utils:Confusion matrix plot saved to results\run_20251005_005642\confusion_matrix.png
+INFO:utils:ROC curve plot saved to results\run_20251005_005642\roc_curve.png
+INFO:utils:Precision-Recall curve plot saved to results\run_20251005_005642\precision_recall_curve.png
+INFO:__main__:Visualizations saved to results\run_20251005_005642
+INFO:utils:Evaluation results saved to results\run_20251005_005642\evaluation_results.json
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`.
+INFO:lstm_model:Model saved to results\run_20251005_005642\exoplanet_lstm_model.h5
+INFO:utils:Summary report saved to results\run_20251005_005642\summary_report.txt
+
+EXOPLANET CLASSIFICATION - SUMMARY REPORT
+============================================================
+Generated: 2025-10-05 09:26:38
+
+DATA SUMMARY:
+--------------------
+  total_light_curves: 39891
+  positive_class_count: 13403
+  negative_class_count: 26488
+  class_ratio: 0.3359905743150084
+  avg_length: 5187.868616981274
+  min_length: 476
+  max_length: 53460
+  median_length: 476.0
+
+PREPROCESSING SUMMARY:
+-------------------------
+  original_light_curves: 39891
+  processed_light_curves: 16650
+  total_sequences: 323665
+  avg_sequences_per_light_curve: 19.43933933933934
+  rejected_too_short: 23241
+
+MODEL EVALUATION SUMMARY:
+------------------------------
+  train_default_threshold:
+    accuracy: 0.7833
+    precision: 0.8996
+    recall: 0.8490
+    f1_score: 0.8736
+    roc_auc: 0.5886
+    threshold: 0.5000
+    n_samples: 225640
+    n_positive: 198951
+    n_negative: 26689
+    positive_rate: 0.8817
+    specificity: 0.2938
+    sensitivity: 0.8490
+    balanced_accuracy: 0.5714
+  train_optimal_threshold:
+    accuracy: 0.8826
+    precision: 0.8838
+    recall: 0.9981
+    f1_score: 0.9375
+    roc_auc: 0.5886
+    threshold: 0.3000
+    n_samples: 225640
+    n_positive: 198951
+    n_negative: 26689
+    positive_rate: 0.8817
+    specificity: 0.0218
+    sensitivity: 0.9981
+    balanced_accuracy: 0.5100
+  train_optimal_threshold_value: 0.3000
+  val_default_threshold:
+    accuracy: 0.8846
+    precision: 0.9234
+    recall: 0.9507
+    f1_score: 0.9369
+    roc_auc: 0.5945
+    threshold: 0.5000
+    n_samples: 51260
+    n_positive: 46161
+    n_negative: 5099
+    positive_rate: 0.9005
+    specificity: 0.2859
+    sensitivity: 0.9507
+    balanced_accuracy: 0.6183
+  val_optimal_threshold:
+    accuracy: 0.9031
+    precision: 0.9033
+    recall: 0.9994
+    f1_score: 0.9489
+    roc_auc: 0.5945
+    threshold: 0.3000
+    n_samples: 51260
+    n_positive: 46161
+    n_negative: 5099
+    positive_rate: 0.9005
+    specificity: 0.0320
+    sensitivity: 0.9994
+    balanced_accuracy: 0.5157
+  val_optimal_threshold_value: 0.3000
+  test_default_threshold:
+    accuracy: 0.7508
+    precision: 0.8468
+    recall: 0.8535
+    f1_score: 0.8501
+    roc_auc: 0.5729
+    threshold: 0.5000
+    n_samples: 46765
+    n_positive: 38727
+    n_negative: 8038
+    positive_rate: 0.8281
+    specificity: 0.2562
+    sensitivity: 0.8535
+    balanced_accuracy: 0.5548
+  test_optimal_threshold:
+    accuracy: 0.8282
+    precision: 0.8282
+    recall: 1.0000
+    f1_score: 0.9060
+    roc_auc: 0.5729
+    threshold: 0.2900
+    n_samples: 46765
+    n_positive: 38727
+    n_negative: 8038
+    positive_rate: 0.8281
+    specificity: 0.0007
+    sensitivity: 1.0000
+    balanced_accuracy: 0.5004
+  test_optimal_threshold_value: 0.2900
+INFO:__main__:All results saved to results\run_20251005_005642
+INFO:__main__:Pipeline completed successfully!
+
+============================================================
+EXOPLANET CLASSIFICATION COMPLETED
+============================================================
