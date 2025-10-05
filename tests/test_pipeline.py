@@ -6,8 +6,8 @@ Tests data loading and preprocessing without requiring TensorFlow.
 import os
 import sys
 
-# Add current directory to path
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+# Add models directory to path
+sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'models'))
 
 def test_data_loading():
     """Test the data loading functionality."""
@@ -16,7 +16,7 @@ def test_data_loading():
     print("=" * 60)
     
     try:
-        from data_loader import KeplerDataLoader
+        from models.data_loader import KeplerDataLoader
         
         # Initialize loader
         loader = KeplerDataLoader(data_root="../data")
@@ -58,7 +58,7 @@ def test_preprocessing(data):
     print("=" * 60)
     
     try:
-        from preprocessing import LightCurvePreprocessor
+        from models.preprocessing import LightCurvePreprocessor
         
         # Initialize preprocessor
         preprocessor = LightCurvePreprocessor(
@@ -110,7 +110,7 @@ def test_utils():
     print("=" * 60)
     
     try:
-        from utils import ModelEvaluator, DataUtils
+        from models.utils import ModelEvaluator, DataUtils
         import numpy as np
         
         # Create dummy data for testing

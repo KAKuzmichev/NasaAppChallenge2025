@@ -16,16 +16,16 @@ import joblib
 import os
 import sys
 
-# Add ann directory to path for LSTM imports
-sys.path.append(os.path.join(os.path.dirname(__file__), 'ann'))
+# Add models directory to path for LSTM imports
+sys.path.append(os.path.join(os.path.dirname(__file__), 'models'))
 
 # Import LSTM components (with fallback if TensorFlow not available)
 try:
-    from ann.data_loader import KeplerDataLoader
-    from ann.preprocessing import LightCurvePreprocessor  
-    from ann.lstm_model import create_simple_model, create_advanced_model
-    from ann.utils import ModelEvaluator, PlottingUtils
-    from ann.exoplanet_classifier import ExoplanetClassificationPipeline
+    from models.data_loader import KeplerDataLoader
+    from models.preprocessing import LightCurvePreprocessor  
+    from models.lstm_model import create_simple_model, create_advanced_model
+    from models.utils import ModelEvaluator, PlottingUtils
+    from models.exoplanet_classifier import ExoplanetClassificationPipeline
     LSTM_AVAILABLE = True
 except ImportError as e:
     st.sidebar.warning(f"LSTM components not available: {e}")

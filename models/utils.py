@@ -22,6 +22,34 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
+def convert_numpy_types(obj):
+    """
+    Recursively convert NumPy types to native Python types for JSON serialization.
+    
+    Args:
+        obj: Object to convert
+        
+    Returns:
+        Object with NumPy types converted to native Python types
+    """
+    if isinstance(obj, np.integer):
+        return int(obj)
+    elif isinstance(obj, np.floating):
+        return float(obj)
+    elif isinstance(obj, np.bool_):
+        return bool(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, dict):
+        return {key: convert_numpy_types(value) for key, value in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_numpy_types(item) for item in obj]
+    elif isinstance(obj, tuple):
+        return tuple(convert_numpy_types(item) for item in obj)
+    else:
+        return obj
+
+
 class ModelEvaluator:
     """
     Comprehensive evaluation suite for the exoplanet classification model.
@@ -162,16 +190,39 @@ class ModelEvaluator:
         print(f"  Specificity: {optimal_metrics['specificity']:.4f}")
     
     def save_results(self, filepath: str):
-        """Save evaluation results to JSON file."""
-        results_with_metadata = {
-            'evaluation_timestamp': datetime.now().isoformat(),
-            'results': self.results
-        }
-        
-        with open(filepath, 'w') as f:
-            json.dump(results_with_metadata, f, indent=2)
-        
-        logger.info(f"Evaluation results saved to {filepath}")
+        """Save evaluation results to JSON file with proper NumPy type conversion."""
+        try:
+            # Convert NumPy types to JSON-serializable types
+            json_safe_results = convert_numpy_types(self.results)
+            
+            results_with_metadata = {
+                'evaluation_timestamp': datetime.now().isoformat(),
+                'results': json_safe_results
+            }
+            
+            with open(filepath, 'w') as f:
+                json.dump(results_with_metadata, f, indent=2, default=str)
+            
+            logger.info(f"Evaluation results saved to {filepath}")
+            
+        except (TypeError, ValueError) as e:
+            logger.error(f"Error saving results to JSON: {e}")
+            # Fallback: save with string conversion for any remaining issues
+            try:
+                fallback_results = json.loads(json.dumps(self.results, default=str))
+                results_with_metadata = {
+                    'evaluation_timestamp': datetime.now().isoformat(),
+                    'results': fallback_results
+                }
+                
+                with open(filepath, 'w') as f:
+                    json.dump(results_with_metadata, f, indent=2)
+                
+                logger.info(f"Evaluation results saved to {filepath} (using fallback method)")
+                
+            except Exception as fallback_error:
+                logger.error(f"Failed to save results even with fallback: {fallback_error}")
+                raise
 
 
 class PlottingUtils:
@@ -358,11 +409,11 @@ class DataUtils:
         analysis = {
             'total_sequences': len(kic_ids),
             'unique_kics': len(kic_counts),
-            'avg_sequences_per_kic': kic_counts.mean(),
-            'min_sequences_per_kic': kic_counts.min(),
-            'max_sequences_per_kic': kic_counts.max(),
-            'median_sequences_per_kic': kic_counts.median(),
-            'sequences_per_kic_std': kic_counts.std()
+            'avg_sequences_per_kic': float(kic_counts.mean()),
+            'min_sequences_per_kic': int(kic_counts.min()),
+            'max_sequences_per_kic': int(kic_counts.max()),
+            'median_sequences_per_kic': float(kic_counts.median()),
+            'sequences_per_kic_std': float(kic_counts.std())
         }
         
         return analysis
